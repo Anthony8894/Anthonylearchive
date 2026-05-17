@@ -4,139 +4,97 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anthony Le Archive</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090909;
+      --text: #f4f0e8;
+      --muted: #9a968d;
+      --line: #2a2925;
+      --gold: #d7b85f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 28% 20%, rgba(215, 184, 95, 0.12), transparent 22rem),
+        linear-gradient(180deg, #11110f 0%, var(--bg) 58%);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+
+    main {
+      width: min(100%, 620px);
+      padding: 32px 22px;
+    }
+
+    .mark {
+      width: 54px;
+      height: 54px;
+      margin: 0 auto 24px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      background: #151411;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 8vw, 5.2rem);
+      line-height: 0.94;
+      letter-spacing: 0;
+    }
+
+    p {
+      max-width: 440px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      min-height: 36px;
+      margin-top: 28px;
+      padding: 0 13px;
+      border: 1px solid var(--line);
+      color: #d8d3c8;
+      background: rgba(20, 19, 16, 0.78);
+      font-size: 0.86rem;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 18px rgba(215, 184, 95, 0.8);
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="#gallery" aria-label="Anthony Le Archive home">
-        <span class="mark">AL</span>
-        <span class="brand-text">
-          <strong>Anthony Le Archive</strong>
-          <span>personal photo dump</span>
-        </span>
-      </a>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="#gallery">Gallery</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#socials">Socials</a>
-      </nav>
+  <main>
+    <div class="mark">AL</div>
+    <h1>Anthony Le Archive</h1>
+    <p>This photo archive is currently being built. Check back soon.</p>
+    <div class="status">
+      <span class="dot"></span>
+      under construction
     </div>
-  </header>
-
-  <main class="wrap">
-    <section class="intro" aria-labelledby="page-title">
-      <h1 id="page-title">The camera roll, but with a front door.</h1>
-      <p class="intro-copy">A gallery-first home for photo dumps, quiet moments, work in progress, and the stuff that feels too small for a portfolio but too good to disappear.</p>
-    </section>
-
-    <section class="stats" aria-label="Archive stats">
-      <div class="stat"><b>140</b><span>photos ready to archive</span></div>
-      <div class="stat"><b>6</b><span>loose albums for browsing</span></div>
-      <div class="stat"><b>0</b><span>likes, counts, or pressure</span></div>
-    </section>
-
-    <section id="gallery" aria-labelledby="gallery-title">
-      <div class="toolbar">
-        <div>
-          <h2 id="gallery-title">Gallery</h2>
-        </div>
-        <button class="view-button" type="button" id="shuffle">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="m15 15 6 6"/><path d="m4 4 5 5"/></svg>
-          Random photo
-        </button>
-      </div>
-
-      <div class="filters" aria-label="Photo filters">
-        <button class="filter active" type="button" data-filter="all">all</button>
-        <button class="filter" type="button" data-filter="people">people</button>
-        <button class="filter" type="button" data-filter="nights">nights</button>
-        <button class="filter" type="button" data-filter="food">food</button>
-        <button class="filter" type="button" data-filter="places">places</button>
-        <button class="filter" type="button" data-filter="random">random</button>
-      </div>
-
-      <div class="gallery" id="photoGrid" aria-live="polite"></div>
-    </section>
-
-    <section class="section" id="projects" aria-labelledby="projects-title">
-      <div class="section-head">
-        <h2 id="projects-title">Projects</h2>
-        <p>Use this page for more intentional work: shoots, videos, design experiments, school work, or anything that deserves context beyond a single image.</p>
-      </div>
-
-      <div class="projects-grid">
-        <a class="project-card" href="#">
-          <img src="https://picsum.photos/seed/project-after-hours/900/675" alt="">
-          <div class="project-body">
-            <div>
-              <h3>After Hours</h3>
-              <p>A low-light set of streets, parking lots, signs, and the little scenes that only look right after midnight.</p>
-            </div>
-            <span class="project-meta">photo set / 2026</span>
-          </div>
-        </a>
-
-        <a class="project-card" href="#">
-          <img src="https://picsum.photos/seed/project-objects/900/675" alt="">
-          <div class="project-body">
-            <div>
-              <h3>Objects I Kept Looking At</h3>
-              <p>Small still lifes, found details, and camera-roll evidence from ordinary days.</p>
-            </div>
-            <span class="project-meta">archive / ongoing</span>
-          </div>
-        </a>
-
-        <a class="project-card" href="#">
-          <img src="https://picsum.photos/seed/project-friends/900/675" alt="">
-          <div class="project-body">
-            <div>
-              <h3>People Nearby</h3>
-              <p>Portraits, friends, passing moments, and photos that feel better when they stay a little informal.</p>
-            </div>
-            <span class="project-meta">personal / ongoing</span>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <section class="section" id="about" aria-labelledby="about-title">
-      <div class="section-head">
-        <h2 id="about-title">About</h2>
-        <p>Short enough to feel personal, not so formal that the site starts wearing a blazer.</p>
-      </div>
-
-      <div class="about-layout">
-        <p class="about-copy">Anthony Le Archive is a living photo dump: part gallery, part sketchbook, part proof that the random pictures were worth keeping.</p>
-        <div class="about-side" id="socials">
-          <p>Use this area for a simple bio, current location, what you make, and where people can find you. It can stay casual and still feel intentional.</p>
-          <div class="socials" aria-label="Social links">
-            <a href="#">Instagram</a>
-            <a href="#">TikTok</a>
-            <a href="#">YouTube</a>
-            <a href="mailto:hello@example.com">Email</a>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
-
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox-card" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
-      <img class="lightbox-img" id="lightboxImg" src="" alt="">
-      <div class="lightbox-info">
-        <div>
-          <h3 id="lightboxTitle">@anthonylearchive</h3>
-          <p id="lightboxCaption"></p>
-          <span id="lightboxMeta"></span>
-        </div>
-        <button class="close-button" type="button" id="closeLightbox">Close</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
