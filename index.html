@@ -3,45 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    p {
-      opacity: 0.7;
-      margin-bottom: 30px;
-    }
-
-    img {
-      max-width: 300px;
-      opacity: 0.9;
-    }
-  </style>
+  <title>Anthony Le Archive</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>🚧 Website Under Construction</h1>
-  <p>Anthonylearchive.com is currently being built.</p>
-  <p>Check back soon.</p>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Anthony Le Archive home">
+      <span class="mark">AL</span>
+      <span>
+        <strong>Anthony Le Archive</strong>
+        <small>145 photos</small>
+      </span>
+    </a>
 
-  <img src="assets/images/construction.png" alt="Under Construction">
-  
+    <nav aria-label="Site navigation">
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="intro" id="gallery" aria-labelledby="page-title">
+      <h1 id="page-title">Gallery</h1>
+    </section>
+
+    <section class="toolbar" aria-label="Gallery controls">
+      <div>
+        <p>Click any photo to open it larger.</p>
+      </div>
+      <button class="shuffle-button" type="button" id="shufflePhoto">Random photo</button>
+    </section>
+
+    <section class="gallery" id="photoGrid" aria-label="Photo gallery"></section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="close-button" type="button" id="closeLightbox" aria-label="Close photo">Close</button>
+    <img id="lightboxImage" src="" alt="">
+    <p id="lightboxCaption"></p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-
